@@ -6,16 +6,17 @@
 }
 .headerWithTable .header .header_div {
   display: flex;
-  flex-direction: column;
   padding: 10px 20px;
   background-color: #2b3674;
   font-size: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
 }
 .headerWithTable .header .header_div .table_headline {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
 }
 .headerWithTable .header .header_div .table_headline h1 {
   margin: 0;
@@ -25,6 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 100px;
 }
 .headerWithTable .header .header_div .btn_and_search button {
   padding: 7px 11px;
@@ -32,7 +34,7 @@
 .headerWithTable .header .header_div .btn_and_search .add_btn {
   width: 60px;
   height: 40px;
-  font-size: 17px;
+  font-size: 15px;
   color: white;
   background-color: #4F8E33;
   border: none;

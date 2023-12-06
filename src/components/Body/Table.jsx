@@ -18,10 +18,11 @@ const Table = ({ showOverlay, setShowOverlay }) => {
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(5);
   const [search, setSearch] = useState("");
-  const [searchNotFound, setSearchNotFound] = useState(false)
+  const [searchNotFound, setSearchNotFound] = useState(false);
 
   const dispatch = useDispatch();
-  const { data } = useSelector((state) => state.contact_list);
+  // const { data } = useSelector((state) => state.contact_list);
+  const contactData = useSelector((state) => state.contact_list?.data);
 
   const openForm = () => {
     setShowForm(true);
@@ -39,9 +40,11 @@ const Table = ({ showOverlay, setShowOverlay }) => {
   };
 
   const handleUpdateFormOpening = (id) => {
-    if (data && Array.isArray(data.data)) {
-      const contactToUpdate = data.data.find((contact) => contact.id === id);
-  
+    if (contactData?.data?.length > 0) {
+      const contactToUpdate = contactData.data.find(
+        (contact) => contact.id === id
+      );
+
       if (contactToUpdate) {
         setSingleContactData(contactToUpdate);
         setOpenUpdateForm(true);
@@ -53,7 +56,6 @@ const Table = ({ showOverlay, setShowOverlay }) => {
       console.error("Invalid data structure or data is undefined");
     }
   };
-  
 
   const handlePageChange = (newPage) => {
     setPage(newPage);
@@ -66,23 +68,19 @@ const Table = ({ showOverlay, setShowOverlay }) => {
 
   const handleSearchChange = (event) => {
     const searchTerm = event.target.value.toLowerCase();
-    const isContactFound = data.data.some(
-      (contact) =>
-        contact.first_name.toLowerCase().includes(searchTerm) ||
-        contact.last_name.toLowerCase().includes(searchTerm) ||
-        contact.phone.toLowerCase().includes(searchTerm) ||
-        contact.email.toLowerCase().includes(searchTerm)
+    const isContactFound = contactData.data.some((contact) =>
+      ["first_name", "last_name", "phone", "email"].some((field) =>
+        contact[field].toLowerCase().includes(searchTerm)
+      )
     );
-  
-    if (!isContactFound) {
-      setSearchNotFound(true);
-    } else {
-      setSearchNotFound(false);
-      setSearch(event.target.value);
+
+    setSearchNotFound(!isContactFound);
+
+    if (isContactFound) {
+      setSearch(searchTerm);
       setPage(1);
     }
   };
-  
 
   useEffect(() => {
     dispatch(fetchAllContacts({ page, limit, search }));
@@ -90,7 +88,7 @@ const Table = ({ showOverlay, setShowOverlay }) => {
 
   const seriralNumber = (index) => {
     return (page - 1) * limit + index + 1;
-  }
+  };
 
   return (
     <>
@@ -101,15 +99,15 @@ const Table = ({ showOverlay, setShowOverlay }) => {
               <h1>Contact List</h1>
             </div>
             <div className="btn_and_search">
-              <button className="add_btn" onClick={openForm}>
-                Add
-              </button>
               <input
                 type="search"
                 placeholder="Search here..."
                 value={search}
                 onChange={handleSearchChange}
               />
+              <button className="add_btn" onClick={openForm}>
+                Add
+              </button>
             </div>
           </div>
 
@@ -138,34 +136,36 @@ const Table = ({ showOverlay, setShowOverlay }) => {
                 <th> </th>
               </tr>
             </thead>
-            {searchNotFound ? (<h1>Contact not found</h1>):(
+            {searchNotFound ? (
+              <h1>Contact not found</h1>
+            ) : (
               <tbody>
-              {data &&
-                Array.isArray(data.data) &&
-                data.data.map((contacts, index) => (
-                  <tr key={index}>
-                    <td>{seriralNumber(index)}</td>
-                    <td>{contacts.first_name}</td>
-                    <td>{contacts.last_name}</td>
-                    <td>{contacts.phone}</td>
-                    <td>{contacts.email}</td>
-                    <td>
-                      <button
-                        className="update_btn"
-                        onClick={() => handleUpdateFormOpening(contacts.id)}
-                      >
-                        Update
-                      </button>
-                      <button
-                        className="delete_btn"
-                        onClick={() => handleDeleteConfirmation(contacts.id)}
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
+                {contactData &&
+                  Array.isArray(contactData.data) &&
+                  contactData.data.map((contacts, index) => (
+                    <tr key={index}>
+                      <td>{seriralNumber(index)}</td>
+                      <td>{contacts.first_name}</td>
+                      <td>{contacts.last_name}</td>
+                      <td>{contacts.phone}</td>
+                      <td>{contacts.email}</td>
+                      <td>
+                        <button
+                          className="update_btn"
+                          onClick={() => handleUpdateFormOpening(contacts.id)}
+                        >
+                          Update
+                        </button>
+                        <button
+                          className="delete_btn"
+                          onClick={() => handleDeleteConfirmation(contacts.id)}
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
             )}
           </table>
         </div>
@@ -198,11 +198,11 @@ const Table = ({ showOverlay, setShowOverlay }) => {
       )}
 
       <Pagination
-        total={data.total}
-        totalPages={data.totalPages}
-        currentPage={data.currentPage}
-        hasNextPage={data.hasNextPage}
-        hasPreviousPage={data.hasPreviousPage}
+        total={contactData.total}
+        totalPages={contactData.totalPages}
+        currentPage={contactData.currentPage}
+        hasNextPage={contactData.hasNextPage}
+        hasPreviousPage={contactData.hasPreviousPage}
         setPage={handlePageChange}
         setLimit={handleLimitChange}
         page={page}

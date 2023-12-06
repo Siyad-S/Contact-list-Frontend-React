@@ -8,16 +8,17 @@
   
     .header_div {
       display: flex;
-      flex-direction: column;
       padding: 10px 20px;
       background-color: $primary-color;
       font-size: 20px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 60px;
 
       .table_headline {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-top: 20px;
         h1 {
           margin: 0;
           color: white;
@@ -27,6 +28,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 100px;
         
         button {
           padding: 7px 11px;
@@ -35,7 +37,7 @@
         .add_btn {
           width: 60px;
           height: 40px;
-          font-size: 17px;
+          font-size: 15px;
           @include btn (white, $secondary-color);
     
           &:hover {
