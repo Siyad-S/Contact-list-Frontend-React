@@ -1,0 +1,19 @@
+.mainBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+
+  .contactShower_table {
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+
+  

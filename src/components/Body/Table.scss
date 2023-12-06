@@ -1,0 +1,153 @@
+@import "../Variables/Variables.scss";
+
+.headerWithTable {
+  min-height: 86.5vh;
+
+  .header {
+    position: relative;
+  
+    .header_div {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 20px;
+      background-color: $primary-color;
+      font-size: 20px;
+
+      .table_headline {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        h1 {
+          margin: 0;
+          color: white;
+        }
+      }
+      .btn_and_search {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        button {
+          padding: 7px 11px;
+        }
+    
+        .add_btn {
+          width: 60px;
+          height: 40px;
+          font-size: 17px;
+          @include btn (white, $secondary-color);
+    
+          &:hover {
+            cursor: pointer;
+            @include btn (white, $tertiary-color);
+          }
+        }
+    
+        input {
+          border: 1px solid #c4bcbc;
+          border-radius: 5px;
+          padding: 7px 15px;
+          width: 250px;
+          height: 40px;
+        }
+      }
+    }
+  
+    .addContact_form {
+      width: 350px;
+      height: auto;
+      padding: 15px;
+      background-color: $quaternary-color;
+      border-radius: 7px;
+      position: absolute;
+      top: 100px;
+      right: 585px;
+    }
+  
+    .overlay {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+  }
+  
+  .table_box {
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    
+      thead {
+        th {
+          background-color: $primary-color;
+          color: white;
+        }
+      }
+    
+      th,
+      td {
+        border: 1px solid rgb(214, 209, 209);
+        padding: 9px;
+        text-align: center;
+        font-weight: 700;
+      }
+    
+      th {
+        background-color: #f2f2f2;
+      }
+    
+      tbody {
+        tr {
+          &:nth-child(even) {
+            background-color: #f9f9f9;
+          }
+    
+          text-align: center;
+    
+          td:last-child {
+            display: grid;
+            justify-content: space-around;
+    
+            button {
+              padding: 7px 11px;
+              width: 60px;
+              height: 40px;
+              font-size: 15px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+    
+            gap: 5px;
+          }
+        }
+    
+        .update_btn,
+        .delete_btn {
+          @include btn (white, $secondary-color);
+    
+          &:hover {
+            cursor: pointer;
+            @include btn (white, $tertiary-color);
+          }
+        }
+      }
+    
+    }
+  }
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}

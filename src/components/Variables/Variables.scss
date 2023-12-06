@@ -1,0 +1,11 @@
+@mixin btn($color, $background){
+    color: $color;
+    background-color: $background;
+    border: none;
+    border-radius: 5px;
+  }
+$primary-color: #2b3674;
+$secondary-color: #4F8E33;
+$tertiary-color: #2C6C35;
+$quaternary-color: #daf5ce;
+$quinary-color: #a0c4a4;

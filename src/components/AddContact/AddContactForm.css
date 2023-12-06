@@ -1,0 +1,56 @@
+.form_div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form_div .addFormCloseBtn {
+  display: flex;
+  justify-content: space-between;
+}
+.form_div .addFormCloseBtn button {
+  width: 25px;
+  height: 20px;
+  color: white;
+  background-color: #4F8E33;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #4F8E33;
+  border: none;
+  border-radius: 5px;
+}
+.form_div .addFormCloseBtn button:hover {
+  cursor: pointer;
+  background-color: #2C6C35;
+}
+.form_div .addFormCloseBtn i {
+  font-size: 20px;
+}
+.form_div form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: black;
+}
+.form_div form input {
+  border: 1px solid #c4bcbc;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+.form_div form div {
+  color: red;
+}
+.form_div .submit_btn {
+  padding: 7px 10px;
+  color: white;
+  background-color: #4F8E33;
+  border: none;
+  border-radius: 5px;
+}
+.form_div .submit_btn:hover {
+  cursor: pointer;
+  background-color: #2C6C35;
+}

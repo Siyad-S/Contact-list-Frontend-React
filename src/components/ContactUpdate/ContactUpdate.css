@@ -1,0 +1,64 @@
+.update_form {
+  width: 350px;
+  height: auto;
+  padding: 15px;
+  background-color: #daf5ce;
+  border-radius: 7px;
+  position: absolute;
+  top: 100px;
+  right: 575px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.update_form .updateFormClose {
+  display: flex;
+  justify-content: space-between;
+}
+.update_form .updateFormClose button {
+  width: 25px;
+  height: 20px;
+  color: white;
+  background-color: #4F8E33;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #4F8E33;
+  border: none;
+  border-radius: 5px;
+}
+.update_form .updateFormClose button:hover {
+  cursor: pointer;
+  background-color: #2C6C35;
+}
+.update_form .updateFormClose i {
+  font-size: 20px;
+}
+.update_form form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: black;
+}
+.update_form form input {
+  border: 1px solid #c4bcbc;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+.update_form form div {
+  color: #4F8E33;
+}
+.update_form .update_button {
+  padding: 7px 11px;
+  color: white;
+  background-color: #4F8E33;
+  border: none;
+  border-radius: 5px;
+}
+.update_form .update_button:hover {
+  cursor: pointer;
+  background-color: #2C6C35;
+}

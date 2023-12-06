@@ -1,0 +1,39 @@
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.App {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+.App body {
+  cursor: none;
+}
+.App .main_head {
+  background-color: rgb(58, 58, 97);
+  text-align: center;
+}
+.App .main_head h1 {
+  margin: 0;
+  color: white;
+  padding: 15px 0;
+}
+.App .table_container {
+  max-width: 1550px;
+  margin: auto;
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.App .table_container .table_card {
+  width: 100%;
+  min-height: 100vh;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  line-height: 25px;
+}

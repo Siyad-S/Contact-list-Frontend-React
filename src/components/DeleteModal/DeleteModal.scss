@@ -1,0 +1,81 @@
+@import "../Variables//Variables.scss";
+.delete_confirmation {
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    background: rgb(188, 199, 175);
+    position: absolute;
+    top: 180px;
+    left: 540px;
+    padding: 20px;
+    border-radius: 8px;
+    // border: 1px solid rgb(222, 218, 218);
+
+    .close_btn_div {
+        display: flex;
+        justify-content: flex-end;
+        height: 20%;
+        border-bottom: 1px solid rgb(224, 221, 221);
+
+        button {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            @include btn (white, $secondary-color);
+            i {
+                font-size: 20px;
+            }
+
+            &:hover {
+                cursor: pointer;
+                background-color: $tertiary-color;
+            }
+        }
+
+    }
+    .confirmation_question {
+        display: flex;
+        justify-content: center;
+        height: 60%;
+        align-items: center;
+        border-bottom: 1px solid $quaternary-color;
+        h3 {
+            color: black;
+            margin: 0;
+        }
+    }
+    .yes_no_div {
+        display: flex;
+        justify-content: center;
+        gap: 150px;
+        height: 20%;
+        margin-top: 20px;
+        .btn {
+            width: 50px;
+            height: 40px;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .yes_btn {
+            @include btn (white, $secondary-color);
+
+            &:hover {
+                background-color: $tertiary-color;
+            }
+        }
+        .no_btn {
+            @include btn (white, $secondary-color);
+
+            &:hover {
+                background-color: $tertiary-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.mainBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mainBody .contactShower_table {
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+}

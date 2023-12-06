@@ -1,0 +1,136 @@
+.headerWithTable {
+  min-height: 86.5vh;
+}
+.headerWithTable .header {
+  position: relative;
+}
+.headerWithTable .header .header_div {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  background-color: #2b3674;
+  font-size: 20px;
+}
+.headerWithTable .header .header_div .table_headline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+.headerWithTable .header .header_div .table_headline h1 {
+  margin: 0;
+  color: white;
+}
+.headerWithTable .header .header_div .btn_and_search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.headerWithTable .header .header_div .btn_and_search button {
+  padding: 7px 11px;
+}
+.headerWithTable .header .header_div .btn_and_search .add_btn {
+  width: 60px;
+  height: 40px;
+  font-size: 17px;
+  color: white;
+  background-color: #4F8E33;
+  border: none;
+  border-radius: 5px;
+}
+.headerWithTable .header .header_div .btn_and_search .add_btn:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #2C6C35;
+  border: none;
+  border-radius: 5px;
+}
+.headerWithTable .header .header_div .btn_and_search input {
+  border: 1px solid #c4bcbc;
+  border-radius: 5px;
+  padding: 7px 15px;
+  width: 250px;
+  height: 40px;
+}
+.headerWithTable .header .addContact_form {
+  width: 350px;
+  height: auto;
+  padding: 15px;
+  background-color: #daf5ce;
+  border-radius: 7px;
+  position: absolute;
+  top: 100px;
+  right: 585px;
+}
+.headerWithTable .header .overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.headerWithTable .table_box table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.headerWithTable .table_box table thead th {
+  background-color: #2b3674;
+  color: white;
+}
+.headerWithTable .table_box table th,
+.headerWithTable .table_box table td {
+  border: 1px solid rgb(214, 209, 209);
+  padding: 9px;
+  text-align: center;
+  font-weight: 700;
+}
+.headerWithTable .table_box table th {
+  background-color: #f2f2f2;
+}
+.headerWithTable .table_box table tbody tr {
+  text-align: center;
+}
+.headerWithTable .table_box table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.headerWithTable .table_box table tbody tr td:last-child {
+  display: grid;
+  justify-content: space-around;
+  gap: 5px;
+}
+.headerWithTable .table_box table tbody tr td:last-child button {
+  padding: 7px 11px;
+  width: 60px;
+  height: 40px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.headerWithTable .table_box table tbody .update_btn,
+.headerWithTable .table_box table tbody .delete_btn {
+  color: white;
+  background-color: #4F8E33;
+  border: none;
+  border-radius: 5px;
+}
+.headerWithTable .table_box table tbody .update_btn:hover,
+.headerWithTable .table_box table tbody .delete_btn:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #2C6C35;
+  border: none;
+  border-radius: 5px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}

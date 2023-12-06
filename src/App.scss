@@ -1,0 +1,49 @@
+* {
+  user-select: none;
+}
+.App {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    body {
+      cursor: none;
+    }
+  
+    .main_head {
+      background-color: rgb(58, 58, 97);
+      text-align: center;
+  
+      h1 {
+        margin: 0;
+        color: white;
+        padding: 15px 0;
+      }
+    }
+  
+    .table_container {
+      max-width: 1550px;
+      margin: auto;
+      min-height: 100vh;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      // padding-top: 30px;
+  
+      .table_card {
+        width: 100%;
+        // max-width: 1250px;
+        min-height: 100vh;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        line-height: 25px;
+        // border-radius: 5px;
+        // box-shadow:
+        // 10px 0 10px -5px rgba(0, 0, 0, 0.5), /* Right shadow */
+        // -10px 0 10px -5px rgba(0, 0, 0, 0.5), /* Left shadow */
+        // 0 10px 10px -5px rgba(0, 0, 0, 0.5), /* Bottom shadow */
+        // 0 -10px 10px -5px rgba(0, 0, 0, 0.5); /* Top shadow */
+      }
+    }
+  }
+  

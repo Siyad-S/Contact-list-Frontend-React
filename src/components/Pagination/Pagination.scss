@@ -1,0 +1,76 @@
+@import "../Variables/Variables.scss";
+
+.pagination {
+    background-color: $primary-color;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+
+    .pagination_buttons {
+        display: flex;
+        gap: 6px;
+
+        .paginate_btn {
+            width: 70px;
+            height: 35px;
+            font-size: 15px;
+            border-radius: 4px;
+            border: none;
+            @include btn (white, $secondary-color);
+
+            &:hover {
+                background-color: $tertiary-color;
+            }
+        }
+        button:disabled {
+            background-color: $quinary-color;
+            cursor: not-allowed;
+            &:hover {
+                background-color: $quinary-color;
+            }
+          } 
+      
+          button:not(:disabled):hover {
+            cursor: pointer;
+          }
+      
+        .page_number {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            
+            #buttonNumber {
+                width: 45px;
+                height: 35px;
+                border-radius: 4px;
+                border: none;
+                @include btn (white, $secondary-color);
+
+                &.active {
+                    background-color: $tertiary-color;
+                }
+                
+            }
+            button:hover {
+                background-color: $tertiary-color !important;
+                cursor: pointer;
+            }
+        }
+
+    }
+    .item_per_page {
+        span {
+            color: white;
+
+            select {
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+
+
+}

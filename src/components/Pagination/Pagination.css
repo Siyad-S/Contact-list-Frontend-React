@@ -1,0 +1,66 @@
+.pagination {
+  background-color: #2b3674;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.pagination .pagination_buttons {
+  display: flex;
+  gap: 6px;
+}
+.pagination .pagination_buttons .paginate_btn {
+  width: 70px;
+  height: 35px;
+  font-size: 15px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: #4F8E33;
+  border: none;
+  border-radius: 5px;
+}
+.pagination .pagination_buttons .paginate_btn:hover {
+  background-color: #2C6C35;
+}
+.pagination .pagination_buttons button:disabled {
+  background-color: #a0c4a4;
+  cursor: not-allowed;
+}
+.pagination .pagination_buttons button:disabled:hover {
+  background-color: #a0c4a4;
+}
+.pagination .pagination_buttons button:not(:disabled):hover {
+  cursor: pointer;
+}
+.pagination .pagination_buttons .page_number {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.pagination .pagination_buttons .page_number #buttonNumber {
+  width: 45px;
+  height: 35px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: #4F8E33;
+  border: none;
+  border-radius: 5px;
+}
+.pagination .pagination_buttons .page_number #buttonNumber.active {
+  background-color: #2C6C35;
+}
+.pagination .pagination_buttons .page_number button:hover {
+  background-color: #2C6C35 !important;
+  cursor: pointer;
+}
+.pagination .item_per_page span {
+  color: white;
+}
+.pagination .item_per_page span select {
+  background-color: white;
+  color: black;
+}

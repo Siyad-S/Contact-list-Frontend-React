@@ -1,0 +1,59 @@
+@import "../Variables/Variables.scss";
+
+.form_div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .addFormCloseBtn {
+        display: flex;
+        justify-content: space-between;
+
+    button {
+        width: 25px;
+        height: 20px;
+        color: white;
+        background-color: $secondary-color;
+        border: none;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include btn(white, $secondary-color);
+
+        &:hover {
+            cursor: pointer;
+            background-color: $tertiary-color;
+        }
+    }
+    i {
+        font-size: 20px;
+    }
+
+}
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        color: black;
+    
+        input {
+            border: 1px solid #c4bcbc;
+            border-radius: 5px;
+            padding: 10px 15px;
+          }
+        div {
+            color: red;
+        }
+    }
+    .submit_btn {
+        padding: 7px 10px;
+        @include btn(white, $secondary-color);
+
+        &:hover {
+            cursor: pointer;
+            background-color: $tertiary-color;
+        }
+    }
+}
