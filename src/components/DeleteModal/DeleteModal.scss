@@ -67,10 +67,12 @@
             @include btn (white, $secondary-color);
 
             &:hover {
+                cursor: pointer;
                 background-color: $tertiary-color;
             }
         }
         .no_btn {
+            cursor: pointer;
             @include btn (white, $secondary-color);
 
             &:hover {

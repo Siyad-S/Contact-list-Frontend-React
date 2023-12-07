@@ -68,9 +68,11 @@
   border-radius: 5px;
 }
 .delete_confirmation .yes_no_div .yes_btn:hover {
+  cursor: pointer;
   background-color: #2C6C35;
 }
 .delete_confirmation .yes_no_div .no_btn {
+  cursor: pointer;
   color: white;
   background-color: #4F8E33;
   border: none;
